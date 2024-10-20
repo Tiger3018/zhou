@@ -1,0 +1,104 @@
+---
+layout: landing
+title: What's on?
+---
+
+import { HomePage } from 'vocs/components'
+import * as styles from '../../node_modules/vocs/_lib/app/components/HomePage.css.js'
+import * as stylesLogo from '../../node_modules/vocs/_lib/app/components/Logo.css.js'
+import clsx from 'clsx'
+
+export function Logo() {
+  return (
+    <div className={clsx('', styles.logo)}>
+      <img alt="Logo" style={{objectFit: "contain"}} className={clsx('', stylesLogo.root)} src="https://gravatar.com/avatar/86ea0c284f2a2dc5209ab590f7df41cfcb69d68554b7e400e1b0108f082646e9?s=320" />
+    </div>
+  )
+}
+
+import { Box, Card, Checkbox, Em, Flex, ScrollArea, Text, Theme } from '@radix-ui/themes';
+import "@radix-ui/themes/styles.css";
+
+export const PossesionCard = ({ title, place, note, date, children}) => {
+  return (
+  <Box width="18em" flexShrink="0" style={{scrollSnapAlign: "center"}}>
+    <Card variant="surface">
+      <Flex gap="3" direction="column">
+        <Text as="div" size="4" weight="medium">{title}</Text>
+        {children}
+        <Text as="span" size="2">{place}</Text>
+        <Text as="span" size="1" color="gray" weight="medium"><strong>{note}</strong> · <em>{date}</em>
+
+        </Text>
+      </Flex>
+    </Card>
+  </Box>
+  )
+};
+
+<HomePage.Root>
+  <Logo />
+  <HomePage.Tagline>Zhou, Bohan</HomePage.Tagline>
+  <Theme hasBackground={false} asChild radius="none" style={{minHeight: "0vh !important"}}>
+  <div style={{display: "flex", alignItems: "baseline", gap: ".5rem", flexDirection: "column", textAlign: "left"}}>
+  <div style={{padding: ".5rem", border: ".1rem dotted #cfcfcfcf"}}>
+
+  HTTPS Get Request [By Cable]
+
+  =-=-=-=
+
+  i@tiger3018.top
+
+  AS 13238
+  
+  =-=-=-=
+
+  <Checkbox /> _Unsubscribe this request?_\*
+  
+  </div>
+  </div>
+  </Theme>
+  <div style={{padding: ".5rem", border: ".001rem #cfcfcfcf"}}>
+
+  
+  To Everyone who just come by:
+  
+  </div>
+
+<>
+  <Theme hasBackground={false} asChild radius="none" style={{minHeight: "0 !important"}}>
+    <div style={{width: "90%"}}>
+    <Flex gap="4" style={{overflowX: "scroll", scrollSnapType: "x mandatory", paddingLeft: "10em", paddingRight: "10em", paddingBottom: "2em"}}>
+      <PossesionCard title="Msc, Engineering Acoustics" place="Danmarks Tekniske Universitet" note="Education" date="2024 - Est. 2026">
+
+      Be happpy to learn about the local industrial world, companies and organizations like [DSC](https://danishsoundcluster.dk/), along with the study and teachers.
+
+      </PossesionCard>
+      <PossesionCard title="Bsc, Artifical Intelligence" place="Chongqing University" note="Education" date="2020 - 2024">
+
+      We had so many interesting lectures in [this specialized major (in Chinese)](https://eie.cqu.edu.cn/Academics/MoonClass.htm)... So the content is now WIP!
+
+      </PossesionCard>
+    </Flex>
+    </div>
+  </Theme>
+</>
+
+Social Media: [Github](https://github.com/tiger3018) | [Mastodon](https://mastodon.social/@tiger3018)
+
+Based on [Vite](https://vite.dev) ([VOCS](https://vocs.dev)), using [Gravatar](https://docs.gravatar.com/api/avatars/hash/) to serve randomly updated avatar.
+
+\* *ToS: Unfortunately, we can not really unsubscribe you by the check-box above.*
+
+<div style={{textAlign: "left", opacity: ".03"}}>
+
+***
+
+It's not hard to find that I dont't use the noted "return address" as my Gravatar email address. You can find the address by looking at the domain, but it's just an alias forward address in most cases X~X
+
+```sh
+$ echo -n i@tiger3018.top | sha256sum
+24d5bf396c52df61baf07ab6882caaf428deb80ada8aedfb40b433ff38f64f5e  -
+```
+</div>
+</HomePage.Root>
